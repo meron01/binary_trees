@@ -1,19 +1,21 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_depth - Function that measures the depth of a node in a
- * binary tree
- * @tree: pointer to the root node of the tree
- * Return: 0 if the tree is null or other positive number otherwise
+ * binary_tree_depth - measures the depth of a node in a binary tree
+ * @node: pointer to the node to measure the depth of
+ *
+ * Return: depth of a node in a binary tree. If node is NULL, return 0
  */
-size_t binary_tree_depth(const binary_tree_t *tree)
+size_t binary_tree_depth(const binary_tree_t *node)
 {
-	int parent;
+	size_t count = 0;
 
-	if (tree == NULL || tree->parent == NULL)
-		return (0);
-
-	parent = binary_tree_depth(tree->parent);
-
-	return (parent + 1);
+	if (node == NULL)
+		return (count);
+	while (node->parent != NULL)
+	{
+		count++;
+		node = node->parent;
+	}
+	return (count);
 }
