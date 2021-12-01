@@ -82,5 +82,22 @@ heap_t *heap_insert(heap_t **root, int value);
 heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
+void check_balance_avl(avl_t **node, int value);
+avl_t *inorder_sucessor(avl_t *tree, int mode);
+void change_node(avl_t **arg_tree, avl_t **arg_node);
+avl_t *avl_search_remove(avl_t **tree, int value);
+avl_t *avl_remove(avl_t *root, int value);
+void create_tree(avl_t **node, int *array, size_t size, int mode);
+avl_t *sorted_array_to_avl(int *array, size_t size);
+int tree_is_complete(const binary_tree_t *tree, int i, int cnodes);
+int check_parent(const binary_tree_t *tree);
+int height(const binary_tree_t *tree);
+void swap(heap_t **arg_node, heap_t **arg_child);
+heap_t *heap_insert(heap_t **root, int value);
+heap_t *array_to_heap(int *array, size_t size);
+heap_t *check_new_root(heap_t **root, heap_t *new_root);
+void if_check(heap_t *new_root, heap_t *tmp, heap_t *current);
+void loop_heap(heap_t **root, heap_t *new_root);
+int heap_extract(heap_t **root);
 
 #endif /* BINARY_TREES_H */
